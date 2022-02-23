@@ -1,0 +1,35 @@
+<form class="contact" [formGroup]="form" method="post" (ngSubmit)="onSubmit()">
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput [formControl]="name" placeholder="Jane Doe" required>
+      <mat-error *ngIf="name.invalid">Please enter your name</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Email</mat-label>
+      <input matInput [formControl]="email" placeholder="email@example.com" required>
+      <mat-error *ngIf="email.invalid">Please enter a valid email</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Phone</mat-label>
+        <input matInput [formControl]="phone" placeholder="888-867-5309" required>
+        <mat-error *ngIf="phone.invalid">Please enter a 10 digit phone number</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Company Name</mat-label>
+        <input matInput [formControl]="companyName" placeholder="Taco Tuesday" required>
+        <mat-error *ngIf="companyName.invalid">Enter a company name</mat-error>
+      </mat-form-field>
+    <mat-form-field>
+        <mat-label>Business Type</mat-label>
+        <input matInput [formControl]="businessType" placeholder="Grocer, Restaurant etc." >
+        </mat-form-field>
+    <mat-form-field>
+      <mat-label>How Can We Help?</mat-label>
+      <textarea matInput [formControl]="message" placeholder="My tomatoes are green instead of red!" required></textarea>
+      <mat-error *ngIf="message.invalid">Please enter a message</mat-error>
+    </mat-form-field>
+    <button [disabled]="isLoading" class="submit" type="submit">Submit</button>
+    <div [ngClass]="!submitted? 'hidden' : 'visible'" class="center-text">
+      <span>{{response}}</span>
+    </div>
+  </form>

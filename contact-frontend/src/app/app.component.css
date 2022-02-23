@@ -1,0 +1,14 @@
+#mainPage-contact{
+  width:45%;
+  float:right;
+}
+#mainPage-family{
+  display: flex;
+  justify-content: center; /* align horizontal */
+  align-items: center; /* align vertical */
+  min-height: 400px;
+  padding: 20px;
+  width:45%;
+  float:left;
+  text-align:center;
+}
