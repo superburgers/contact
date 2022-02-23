@@ -53,9 +53,8 @@ export class ContactUsComponent implements OnInit {
 
         console.log('form' + formData);
 
-        let postbody = JSON.stringify(formData);
-        console.log('body' + postbody);
-        
+        // let postbody = JSON.stringify(formData);
+        // console.log('body' + postbody);
 
         let successResponse = `Thank you for your Submission!
         Name: ${this.name}
@@ -70,13 +69,13 @@ export class ContactUsComponent implements OnInit {
         this.submitted = false; 
         var headers = new HttpHeaders({'Content-Type': 'application/x-www-form-urlencoded'});
 
-        this.http.get('https://localhost:5001/api/ContactUs/messageId?id=1').subscribe(
-          (getResponse) => {
-            console.log(getResponse);
-          },
-          (error) => {
-            console.log(error);
-          });
+        // this.http.get('https://localhost:5001/api/ContactUs/messageId?id=1').subscribe(
+        //   (getResponse) => {
+        //     console.log(getResponse);
+        //   },
+        //   (error) => {
+        //     console.log(error);
+        //   });
 
         this.http.post('https://localhost:5001/api/ContactUs', formData, {headers: headers}).subscribe(
           (postResponse) => {
